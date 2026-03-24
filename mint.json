@@ -1,22 +1,17 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
   "name": "Aurus",
   "colors": {
-    "primary": "#0F0F0F",
+    "primary": "#C084FC",
     "light": "#C084FC",
     "dark": "#0F0F0F"
   },
-  "favicon": "/favicon.png",
+  "favicon": "favicon.png",
   "navigation": [
     {
-      "group": "Home",
+      "group": "Overview",
       "pages": [
-        "aurus/home"
-      ]
-    },
-    {
-      "group": "Setup",
-      "pages": [
+        "introduction",
+        "aurus/home",
         "aurus/getting-started"
       ]
     },
