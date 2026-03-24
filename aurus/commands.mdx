@@ -1,17 +1,16 @@
 ---
-title: "Commands & Permissions"
+title: "Commands and Permissions"
 description: "All commands, permissions, and cursor configuration"
-icon: "terminal"
 ---
 
 ## Commands
 
 | Command | Description |
 |---|---|
-| `/au open <menu_id> [player]` | Opens a menu for yourself or a target player |
-| `/au close [player]` | Closes the active menu for yourself or a target player |
+| `/au open menu_id [player]` | Opens a menu |
+| `/au close [player]` | Closes the active menu |
 | `/au reload` | Reloads all menu files and config |
-| `/au debug` | Toggles debug mode — logs button clicks, actions, and input events to console |
+| `/au debug` | Toggles debug mode |
 
 Alias: `/aurus`
 
@@ -19,11 +18,9 @@ Alias: `/aurus`
 
 | Permission | Description | Default |
 |---|---|---|
-| `aurus.admin` | Access to all `/au` subcommands | op |
+| `aurus.admin` | Access to all subcommands | op |
 
 ## Cursor configuration
-
-In `config.yml`:
 
 ```yaml
 cursor:
@@ -34,15 +31,6 @@ cursor:
 
 | Key | Type | Default | Description |
 |---|---|---|---|
-| `type` | string | `TEXT` | Cursor display type: `TEXT`, `ITEM`, or `BLOCK` |
-| `value` | string | `●` | The character (for TEXT), material name (for ITEM/BLOCK). Supports PAPI placeholders |
+| `type` | string | `TEXT` | Cursor display type |
+| `value` | string | `●` | The character or material name |
 | `size` | double | `1.0` | Scale of the cursor |
-
-### Item cursor example
-
-```yaml
-cursor:
-  type: ITEM
-  value: ARROW
-  size: 0.5
-```

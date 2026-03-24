@@ -1,19 +1,16 @@
 ---
 title: "Placeholders"
 description: "PlaceholderAPI support and Aurus variables"
-icon: "code"
 ---
 
 Aurus supports PlaceholderAPI in all text fields and action strings.
 
-## Using PAPI placeholders in menus
-
-Just write the placeholder directly in `text` or action strings:
+## Using placeholders
 
 ```yaml
 info:
   type: TEXT
-  text: "<gray>Player: <white>%player_name%\n<gray>Ping: <green>%player_ping%ms"
+  text: "<gray>Player: <white>%player_name%"
   x: 0.0
   y: 0.8
   size: 1.1
@@ -21,43 +18,16 @@ info:
 
 They refresh every `update-in-ticks` ticks.
 
-## Aurus' own placeholders
-
-These are exposed by Aurus to other plugins via PAPI.
+## Aurus variables
 
 | Placeholder | Returns |
 |---|---|
-| `%aurus_variable_<name>%` | The stored value of an INPUT variable named `<name>` |
+| `%aurus_variable_NAME%` | The stored value of an INPUT variable |
 
 ### Example
 
-<Steps>
-  <Step title="Create an INPUT component">
-    ```yaml
-    nick_input:
-      type: INPUT
-      variable_name: my_nickname
-      text: "<yellow>Set Nickname"
-      x: 0.0
-      y: 0.0
-      size: 1.2
-    ```
-  </Step>
-  <Step title="Use it anywhere via PAPI">
-    ```
-    %aurus_variable_my_nickname%
-    ```
-  </Step>
-</Steps>
+Create an INPUT with `variable_name: my_nickname`, then use `%aurus_variable_my_nickname%` anywhere via PAPI.
 
-## Legacy color code support
+## Legacy color codes
 
-Both `§` (section sign) and `&` codes are automatically converted before rendering.
-
-```yaml
-text: "&aGreen text from a plugin"     # works fine
-text: "§cRed text"                     # works fine
-text: "<green>MiniMessage also works"  # works fine
-```
-
-You can mix them freely.
+Both section-sign and ampersand codes are automatically converted before rendering. You can mix them with MiniMessage freely.

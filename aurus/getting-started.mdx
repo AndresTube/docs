@@ -1,7 +1,6 @@
 ---
 title: "Getting Started"
 description: "Requirements, installation, and file structure for Aurus"
-icon: "rocket"
 ---
 
 ## Requirements
@@ -10,46 +9,33 @@ icon: "rocket"
 |---|---|
 | Paper Server | 1.20.1+ |
 | Java | 17+ |
-| [PacketEvents](https://github.com/retrooper/packetevents) | 2.x (separate plugin) |
-| PlaceholderAPI *(optional)* | Any |
+| PacketEvents | 2.x (separate plugin) |
+| PlaceholderAPI (optional) | Any |
 
 ## Installation
 
-<Steps>
-  <Step title="Install PacketEvents">
-    Install **PacketEvents 2.x** as a separate plugin on your Paper server.
-  </Step>
-  <Step title="Add the plugin">
-    Drop `Aurus-1.1.4-BETA.jar` into your `plugins/` folder.
-  </Step>
-  <Step title="Start the server">
-    Default menus are created in `plugins/Aurus/menus/`.
-  </Step>
-  <Step title="Open a menu">
-    ```bash
-    /au open welcome_server
-    ```
-  </Step>
-</Steps>
+1. Install **PacketEvents 2.x** as a separate plugin on your Paper server.
+2. Drop `Aurus-1.1.4-BETA.jar` into your `plugins/` folder.
+3. Start the server — default menus are created in `plugins/Aurus/menus/`.
+4. Open a menu in-game: `/au open welcome_server`
 
 ## File structure
 
 ```
 plugins/
   Aurus/
-    config.yml         <- cursor settings, global options
+    config.yml
     menus/
       welcome_server.yml
       user_profile.yml
       name_menu.yml
       animated_menu.yml
       pixelart.yml
-      ...
 ```
 
 ## Dependencies
 
-- **PacketEvents 2.x** — required. Must be installed as a separate plugin. Used for packet-based entity rendering and interaction handling.
-- **PlaceholderAPI** — optional. Enables `%placeholder%` support in text fields and actions, and exposes `%aurus_variable_<name>%` for INPUT variables.
+- **PacketEvents 2.x** — required. Must be installed as a separate plugin.
+- **PlaceholderAPI** — optional. Enables placeholder support in text fields and actions.
 
-<Tip>You can hot-reload menus with `/au reload` without restarting the server.</Tip>
+You can hot-reload menus with `/au reload` without restarting the server.

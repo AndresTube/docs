@@ -1,7 +1,6 @@
 ---
 title: "Component Types"
-description: "All available component types: TEXT, BUTTON, INPUT, ITEM, BLOCK, ENTITY, PLAYER"
-icon: "shapes"
+description: "All available component types"
 ---
 
 ## TEXT
@@ -36,54 +35,45 @@ my_button:
     - "[player] spawn"
 ```
 
-| Property | Description |
-|---|---|
-| `sound` | Click sound. Defaults to `minecraft:ui.button.click`. The `minecraft:` prefix is added automatically if omitted |
-
 ### Hover
 
-BUTTON and INPUT components can define a `hover` section that swaps the component's appearance when the player's cursor moves over it. The `hover` section accepts the same keys as any component type.
+BUTTON and INPUT components can define a `hover` section that swaps the component's appearance when the player's cursor moves over it.
 
-<AccordionGroup>
-  <Accordion title="Text-to-text hover">
-    Changes text and color on hover:
+Text-to-text hover:
 
-    ```yaml
-    play_button:
-      type: BUTTON
-      text: "<gray>[ Play ]"
-      x: 0.0
-      y: 0.0
-      size: 1.5
-      actions:
-        - "[close]"
-        - "[player] spawn"
-      hover:
-        type: BUTTON
-        text: "<green><bold>[ Play ]"
-        size: 1.5
-        background: false
-    ```
-  </Accordion>
-  <Accordion title="Text-to-item hover">
-    Swaps from text to an item display on hover:
+```yaml
+play_button:
+  type: BUTTON
+  text: "<gray>[ Play ]"
+  x: 0.0
+  y: 0.0
+  size: 1.5
+  actions:
+    - "[close]"
+    - "[player] spawn"
+  hover:
+    type: BUTTON
+    text: "<green><bold>[ Play ]"
+    size: 1.5
+    background: false
+```
 
-    ```yaml
-    sword_button:
-      type: BUTTON
-      text: "<white>Sword"
-      x: 0.0
-      y: -1.0
-      size: 1.2
-      actions:
-        - "[console] give %player% diamond_sword"
-      hover:
-        type: ITEM
-        material: DIAMOND_SWORD
-        size: 1.2
-    ```
-  </Accordion>
-</AccordionGroup>
+Text-to-item hover:
+
+```yaml
+sword_button:
+  type: BUTTON
+  text: "<white>Sword"
+  x: 0.0
+  y: -1.0
+  size: 1.2
+  actions:
+    - "[console] give %player% diamond_sword"
+  hover:
+    type: ITEM
+    material: DIAMOND_SWORD
+    size: 1.2
+```
 
 ## INPUT
 
@@ -103,7 +93,7 @@ name_input:
     - "[message] <green>Name saved!"
 ```
 
-- `fallback-message` is optional. If set, it replaces the default input prompt message. Supports MiniMessage formatting.
+- `fallback-message` is optional. Supports MiniMessage formatting.
 - `sound` is optional. Custom click sound, same as BUTTON.
 - Access the variable in PAPI: `%aurus_variable_player_custom_name%`
 
@@ -120,11 +110,6 @@ my_item:
   y: 0.0
   size: 1.0
 ```
-
-| Property | Description |
-|---|---|
-| `material` | Material name. Supports PAPI placeholders |
-| `model-id` | Optional. Sets custom model data on the item |
 
 ## BLOCK
 
@@ -157,7 +142,7 @@ my_entity:
 
 ## PLAYER
 
-Displays a fake player NPC with a skin fetched from Mojang. Only visible to the menu viewer.
+Displays a fake player NPC with a skin fetched from Mojang.
 
 ```yaml
 my_npc:
@@ -172,32 +157,16 @@ my_npc:
     y-head: 10
 ```
 
-| Property | Description |
-|---|---|
-| `skin` | Username to fetch the skin from. Supports placeholders (e.g. `%player%` for the viewer's own skin) |
-| `nametag` | Text shown above the NPC. If empty or omitted, the nametag is hidden |
-
 ## Shared properties
 
-All component types support these properties:
-
 | Property | Type | Default | Description |
 |---|---|---|---|
-| `x` | double | `0.0` | Horizontal offset on the menu plane |
-| `y` | double | `0.0` | Vertical offset on the menu plane |
-| `z` | double | `1.0` | Depth offset (forward/backward) |
-| `size` | double | `1.0` | Scale multiplier (affects hitbox for buttons) |
-| `rotation.x/y/z` | double | `0` | Visual rotation in degrees (display entities) |
-| `rotation.x` | double | `0` | Body yaw (PLAYER/ENTITY) |
-| `rotation.x-head` | double | `0` | Head horizontal turn, independent from body (PLAYER/ENTITY) |
-| `rotation.y-head` | double | `0` | Head pitch, tilt up/down (PLAYER/ENTITY) |
-| `hover` | section | *(none)* | Optional hover appearance (BUTTON, INPUT only). Accepts the same keys as any component type |
+| `x` | double | `0.0` | Horizontal offset |
+| `y` | double | `0.0` | Vertical offset |
+| `z` | double | `1.0` | Depth offset |
+| `size` | double | `1.0` | Scale multiplier |
+| `hover` | section | none | Hover appearance (BUTTON, INPUT only) |
+| `background` | boolean | `true` | Dark background behind text |
+| `shadow` | boolean | `false` | Text shadow rendering |
 
-Text-based types (TEXT, BUTTON, INPUT) also support:
-
-| Property | Type | Default | Description |
-|---|---|---|---|
-| `background` | boolean | `true` | Show the dark background behind the text |
-| `shadow` | boolean | `false` | Enable text shadow rendering |
-
-<Note>All text fields support MiniMessage tags (like red, gradient, etc.) and legacy section-sign codes. PlaceholderAPI placeholders are also supported.</Note>
+All text fields support MiniMessage tags and PlaceholderAPI placeholders.
