@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "quill",
   "name": "Aurus",
   "colors": {
     "primary": "#0F0F0F",
@@ -8,43 +8,36 @@
     "dark": "#0F0F0F"
   },
   "favicon": "/favicon.png",
-  "navigation": {
-    "tabs": [
-      {
-        "tab": "Documentation",
-        "groups": [
-          {
-            "group": "Overview",
-            "pages": [
-              "aurus/home"
-            ]
-          },
-          {
-            "group": "Setup",
-            "pages": [
-              "aurus/getting-started"
-            ]
-          },
-          {
-            "group": "Configuration",
-            "pages": [
-              "aurus/menu-configuration",
-              "aurus/component-types",
-              "aurus/actions",
-              "aurus/animations",
-              "aurus/placeholders"
-            ]
-          },
-          {
-            "group": "Reference",
-            "pages": [
-              "aurus/commands"
-            ]
-          }
-        ]
-      }
-    ]
-  },
+  "navigation": [
+    {
+      "group": "Overview",
+      "pages": [
+        "aurus/home"
+      ]
+    },
+    {
+      "group": "Setup",
+      "pages": [
+        "aurus/getting-started"
+      ]
+    },
+    {
+      "group": "Configuration",
+      "pages": [
+        "aurus/menu-configuration",
+        "aurus/component-types",
+        "aurus/actions",
+        "aurus/animations",
+        "aurus/placeholders"
+      ]
+    },
+    {
+      "group": "Reference",
+      "pages": [
+        "aurus/commands"
+      ]
+    }
+  ],
   "contextual": {
     "options": [
       "copy",
