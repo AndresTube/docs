@@ -1,6 +1,5 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "theme": "quill",
   "name": "Aurus",
   "colors": {
     "primary": "#0F0F0F",
@@ -38,23 +37,9 @@
       ]
     }
   ],
-  "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
-    ]
-  },
-  "footer": {
-    "socials": {
-      "discord": "https://discord.com/invite/w7ef4DCqvK",
-      "github": "https://github.com/AndresTube/aurus",
-      "website": "https://builtbybit.com/resources/aurus.99051/"
-    }
+  "footerSocials": {
+    "discord": "https://discord.com/invite/w7ef4DCqvK",
+    "github": "https://github.com/AndresTube/aurus",
+    "website": "https://builtbybit.com/resources/aurus.99051/"
   }
 }
