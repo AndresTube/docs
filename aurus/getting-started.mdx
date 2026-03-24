@@ -1,4 +1,8 @@
-# Getting Started
+---
+title: "Getting Started"
+description: "Requirements, installation, and file structure for Aurus"
+icon: "rocket"
+---
 
 ## Requirements
 
@@ -11,16 +15,24 @@
 
 ## Installation
 
-1. Install **PacketEvents 2.x** as a separate plugin on your Paper server.
-2. Drop `Aurus-1.1.4-BETA.jar` into your `plugins/` folder.
-3. Start the server — default menus are created in `plugins/Aurus/menus/`.
-4. Open a menu in-game:
+<Steps>
+  <Step title="Install PacketEvents">
+    Install **PacketEvents 2.x** as a separate plugin on your Paper server.
+  </Step>
+  <Step title="Add the plugin">
+    Drop `Aurus-1.1.4-BETA.jar` into your `plugins/` folder.
+  </Step>
+  <Step title="Start the server">
+    Default menus are created in `plugins/Aurus/menus/`.
+  </Step>
+  <Step title="Open a menu">
+    ```bash
+    /au open welcome_server
+    ```
+  </Step>
+</Steps>
 
-```
-/au open welcome_server
-```
-
-## File Structure
+## File structure
 
 ```
 plugins/
@@ -40,10 +52,4 @@ plugins/
 - **PacketEvents 2.x** — required. Must be installed as a separate plugin. Used for packet-based entity rendering and interaction handling.
 - **PlaceholderAPI** — optional. Enables `%placeholder%` support in text fields and actions, and exposes `%aurus_variable_<name>%` for INPUT variables.
 
----
-
-> **Tip:** You can hot-reload menus with `/au reload` without restarting the server.
-
----
-
-[Home](./Home) | **Getting Started** | [Menu Configuration](./Menu-Configuration) | [Component Types](./Component-Types) | [Actions](./Actions) | [Animations](./Animations) | [Placeholders](./Placeholders) | [Commands](./Commands)
+<Tip>You can hot-reload menus with `/au reload` without restarting the server.</Tip>

@@ -1,0 +1,55 @@
+---
+title: "Aurus"
+description: "A packet-based 3D menu system for Paper servers (1.20.1+)"
+icon: "cube"
+---
+
+<CardGroup cols={2}>
+  <Card title="Getting Started" icon="rocket" href="/aurus/getting-started">
+    Requirements, installation, and file structure
+  </Card>
+  <Card title="Menu Configuration" icon="sliders" href="/aurus/menu-configuration">
+    Root keys, component keys, and coordinate system
+  </Card>
+  <Card title="Component Types" icon="shapes" href="/aurus/component-types">
+    TEXT, BUTTON, INPUT, ITEM, BLOCK, ENTITY, PLAYER
+  </Card>
+  <Card title="Actions" icon="bolt" href="/aurus/actions">
+    Run commands, send messages, play sounds, and more
+  </Card>
+  <Card title="Animations" icon="sparkles" href="/aurus/animations">
+    Scale, rotate, and move components with math formulas
+  </Card>
+  <Card title="Placeholders" icon="code" href="/aurus/placeholders">
+    PlaceholderAPI support and Aurus variables
+  </Card>
+  <Card title="Commands & Permissions" icon="terminal" href="/aurus/commands">
+    All commands, permissions, and cursor config
+  </Card>
+</CardGroup>
+
+## Quick example
+
+```yaml
+my_menu:
+  distance: 2.5
+  update-in-ticks: 20
+  components:
+    title:
+      type: TEXT
+      text: "<gold>Hello, <aqua>%player_name%!"
+      x: 0.0
+      y: 2.0
+      size: 2.0
+      background: false
+    close_btn:
+      type: BUTTON
+      text: "<red>[ Close ]"
+      x: 0.0
+      y: -1.5
+      size: 1.2
+      actions:
+        - "[close]"
+```
+
+Open it with: `/au open my_menu`

@@ -1,4 +1,8 @@
-# Commands & Permissions
+---
+title: "Commands & Permissions"
+description: "All commands, permissions, and cursor configuration"
+icon: "terminal"
+---
 
 ## Commands
 
@@ -17,9 +21,9 @@ Alias: `/aurus`
 |---|---|---|
 | `aurus.admin` | Access to all `/au` subcommands | op |
 
----
+## Cursor configuration
 
-## config.yml — Cursor
+In `config.yml`:
 
 ```yaml
 cursor:
@@ -33,6 +37,8 @@ cursor:
 | `type` | string | `TEXT` | Cursor display type: `TEXT`, `ITEM`, or `BLOCK` |
 | `value` | string | `●` | The character (for TEXT), material name (for ITEM/BLOCK). Supports PAPI placeholders |
 | `size` | double | `1.0` | Scale of the cursor |
+
+### Item cursor example
 
 ```yaml
 cursor:

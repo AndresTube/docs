@@ -1,8 +1,12 @@
-# Placeholders
+---
+title: "Placeholders"
+description: "PlaceholderAPI support and Aurus variables"
+icon: "code"
+---
 
 Aurus supports PlaceholderAPI in all text fields and action strings.
 
-## Using PAPI Placeholders in Menus
+## Using PAPI placeholders in menus
 
 Just write the placeholder directly in `text` or action strings:
 
@@ -17,9 +21,7 @@ info:
 
 They refresh every `update-in-ticks` ticks.
 
----
-
-## Aurus' Own Placeholders
+## Aurus' own placeholders
 
 These are exposed by Aurus to other plugins via PAPI.
 
@@ -29,25 +31,26 @@ These are exposed by Aurus to other plugins via PAPI.
 
 ### Example
 
-1. Create an INPUT component with `variable_name: my_nickname`:
-```yaml
-nick_input:
-  type: INPUT
-  variable_name: my_nickname
-  text: "<yellow>Set Nickname"
-  x: 0.0
-  y: 0.0
-  size: 1.2
-```
+<Steps>
+  <Step title="Create an INPUT component">
+    ```yaml
+    nick_input:
+      type: INPUT
+      variable_name: my_nickname
+      text: "<yellow>Set Nickname"
+      x: 0.0
+      y: 0.0
+      size: 1.2
+    ```
+  </Step>
+  <Step title="Use it anywhere via PAPI">
+    ```
+    %aurus_variable_my_nickname%
+    ```
+  </Step>
+</Steps>
 
-2. Use it anywhere via PAPI:
-```
-%aurus_variable_my_nickname%
-```
-
----
-
-## Legacy Color Code Support
+## Legacy color code support
 
 Both `§` (section sign) and `&` codes are automatically converted before rendering.
 

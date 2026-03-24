@@ -1,8 +1,12 @@
-# Actions
+---
+title: "Actions"
+description: "Run commands, send messages, play sounds, and navigate menus"
+icon: "bolt"
+---
 
 Actions are strings that run top-to-bottom. They can be used inside a button's `actions` list, and in the menu-level `on-open` and `on-close` lists.
 
-## Available Actions
+## Available actions
 
 | Action | Example | Description |
 |---|---|---|
@@ -34,8 +38,4 @@ my_button:
 
 - `%player%` is always replaced with the player's name in any action string.
 - All other PlaceholderAPI placeholders are also parsed in action strings.
-- `[openmenu]` closes the current menu before opening the new one (duh).
-
----
-
-[Home](./Home) | [Getting Started](./Getting-Started) | [Menu Configuration](./Menu-Configuration) | [Component Types](./Component-Types) | **Actions** | [Animations](./Animations) | [Placeholders](./Placeholders) | [Commands](./Commands)
+- `[openmenu]` closes the current menu before opening the new one.

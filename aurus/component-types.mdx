@@ -1,4 +1,8 @@
-# Component Types
+---
+title: "Component Types"
+description: "All available component types: TEXT, BUTTON, INPUT, ITEM, BLOCK, ENTITY, PLAYER"
+icon: "shapes"
+---
 
 ## TEXT
 
@@ -14,8 +18,6 @@ my_text:
   y: 1.5
   size: 1.2
 ```
-
----
 
 ## BUTTON
 
@@ -42,43 +44,46 @@ my_button:
 
 BUTTON and INPUT components can define a `hover` section that swaps the component's appearance when the player's cursor moves over it. The `hover` section accepts the same keys as any component type.
 
-Text-to-text hover (changes text and color on hover):
+<AccordionGroup>
+  <Accordion title="Text-to-text hover">
+    Changes text and color on hover:
 
-```yaml
-play_button:
-  type: BUTTON
-  text: "<gray>[ Play ]"
-  x: 0.0
-  y: 0.0
-  size: 1.5
-  actions:
-    - "[close]"
-    - "[player] spawn"
-  hover:
-    type: BUTTON
-    text: "<green><bold>[ Play ]"
-    size: 1.5
-    background: false
-```
+    ```yaml
+    play_button:
+      type: BUTTON
+      text: "<gray>[ Play ]"
+      x: 0.0
+      y: 0.0
+      size: 1.5
+      actions:
+        - "[close]"
+        - "[player] spawn"
+      hover:
+        type: BUTTON
+        text: "<green><bold>[ Play ]"
+        size: 1.5
+        background: false
+    ```
+  </Accordion>
+  <Accordion title="Text-to-item hover">
+    Swaps from text to an item display on hover:
 
-Text-to-item hover (swaps from text to an item display on hover):
-
-```yaml
-sword_button:
-  type: BUTTON
-  text: "<white>Sword"
-  x: 0.0
-  y: -1.0
-  size: 1.2
-  actions:
-    - "[console] give %player% diamond_sword"
-  hover:
-    type: ITEM
-    material: DIAMOND_SWORD
-    size: 1.2
-```
-
----
+    ```yaml
+    sword_button:
+      type: BUTTON
+      text: "<white>Sword"
+      x: 0.0
+      y: -1.0
+      size: 1.2
+      actions:
+        - "[console] give %player% diamond_sword"
+      hover:
+        type: ITEM
+        material: DIAMOND_SWORD
+        size: 1.2
+    ```
+  </Accordion>
+</AccordionGroup>
 
 ## INPUT
 
@@ -98,13 +103,9 @@ name_input:
     - "[message] <green>Name saved!"
 ```
 
-`fallback-message` is optional. If set, it replaces the default input prompt message. Supports MiniMessage formatting.
-
-`sound` is optional. Custom click sound, same as BUTTON.
-
-Access the variable in PAPI: `%aurus_variable_player_custom_name%`
-
----
+- `fallback-message` is optional. If set, it replaces the default input prompt message. Supports MiniMessage formatting.
+- `sound` is optional. Custom click sound, same as BUTTON.
+- Access the variable in PAPI: `%aurus_variable_player_custom_name%`
 
 ## ITEM
 
@@ -125,8 +126,6 @@ my_item:
 | `material` | Material name. Supports PAPI placeholders |
 | `model-id` | Optional. Sets custom model data on the item |
 
----
-
 ## BLOCK
 
 Displays a Minecraft block.
@@ -139,8 +138,6 @@ my_block:
   y: 0.0
   size: 0.8
 ```
-
----
 
 ## ENTITY
 
@@ -157,8 +154,6 @@ my_entity:
     x-head: -45
     y-head: 10
 ```
-
----
 
 ## PLAYER
 
@@ -182,9 +177,7 @@ my_npc:
 | `skin` | Username to fetch the skin from. Supports placeholders (e.g. `%player%` for the viewer's own skin) |
 | `nametag` | Text shown above the NPC. If empty or omitted, the nametag is hidden |
 
----
-
-## Shared Properties
+## Shared properties
 
 All component types support these properties:
 
@@ -207,10 +200,4 @@ Text-based types (TEXT, BUTTON, INPUT) also support:
 | `background` | boolean | `true` | Show the dark background behind the text |
 | `shadow` | boolean | `false` | Enable text shadow rendering |
 
----
-
-> **Text Formatting:** All `text` fields support MiniMessage tags (`<red>`, `<gradient:...>`, etc.) and legacy `§` codes. PlaceholderAPI placeholders (`%placeholder%`) are also supported.
-
----
-
-[Home](./Home) | [Getting Started](./Getting-Started) | [Menu Configuration](./Menu-Configuration) | **Component Types** | [Actions](./Actions) | [Animations](./Animations) | [Placeholders](./Placeholders) | [Commands](./Commands)
+<Note>All `text` fields support MiniMessage tags (`<red>`, `<gradient:...>`, etc.) and legacy `§` codes. PlaceholderAPI placeholders (`%placeholder%`) are also supported.</Note>

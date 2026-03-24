@@ -1,8 +1,12 @@
-# Menu Configuration
+---
+title: "Menu Configuration"
+description: "Root keys, component keys, and coordinate system"
+icon: "sliders"
+---
 
 Each `.yml` file inside `plugins/Aurus/menus/` can hold one or more menus. Menus can also be defined under `menus:` in `config.yml`.
 
-## Root Keys
+## Root keys
 
 ```yaml
 my_menu:
@@ -25,10 +29,10 @@ my_menu:
 | `update-in-ticks` | int | `20` | Ticks between placeholder text refreshes |
 | `update-placeholders` | boolean | `true` | Whether placeholder text should refresh after initial render. Set to `false` to disable all placeholder updates |
 | `location` | string | *(none)* | Optional. Teleports the player to a fixed location before opening the menu. Format: `world,x,y,z,yaw,pitch` |
-| `on-open` | string list | `[]` | List of [actions](./Actions) to run when the menu finishes opening |
-| `on-close` | string list | `[]` | List of [actions](./Actions) to run when the menu closes |
+| `on-open` | string list | `[]` | List of [actions](/aurus/actions) to run when the menu finishes opening |
+| `on-close` | string list | `[]` | List of [actions](/aurus/actions) to run when the menu closes |
 
-## Component Keys (shared by all types)
+## Component keys (shared by all types)
 
 | Key | Type | Default | Description |
 |---|---|---|---|
@@ -46,7 +50,7 @@ my_menu:
 | `rotation.x-head` | double | `0` | Head horizontal turn for PLAYER/ENTITY (independent from body) |
 | `rotation.y-head` | double | `0` | Head pitch for PLAYER/ENTITY (tilt up/down) |
 
-## Type-Specific Keys
+## Type-specific keys
 
 | Key | Applies to | Type | Default | Description |
 |---|---|---|---|---|
@@ -61,7 +65,7 @@ my_menu:
 | `nametag` | PLAYER | string | `""` | Text above the NPC. If empty, nametag is hidden |
 | `sound` | BUTTON, INPUT | string | `minecraft:ui.button.click` | Custom click sound. `minecraft:` prefix is added automatically if omitted |
 
-## Coordinate System
+## Coordinate system
 
 `x: 0, y: 0` is the **exact center of the player's screen** when the menu opens.
 
@@ -75,10 +79,6 @@ my_menu:
 
 `z` controls depth: `z: 1.0` (default) is the menu plane, higher values push forward, lower values push backward.
 
----
-
-> **Tip:** Click areas use axis-aligned bounding boxes (AABB). Text components automatically size their hitbox to match the text width. Use `hitbox.width` and `hitbox.height` to override the default hitbox size. When components overlap at different `z` values, the one closest to the camera (lowest `z`) takes priority.
-
----
-
-[Home](./Home) | [Getting Started](./Getting-Started) | **Menu Configuration** | [Component Types](./Component-Types) | [Actions](./Actions) | [Animations](./Animations) | [Placeholders](./Placeholders) | [Commands](./Commands)
+<Tip>
+Click areas use axis-aligned bounding boxes (AABB). Text components automatically size their hitbox to match the text width. Use `hitbox.width` and `hitbox.height` to override the default hitbox size. When components overlap at different `z` values, the one closest to the camera (lowest `z`) takes priority.
+</Tip>
