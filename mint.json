@@ -9,6 +9,12 @@
   "favicon": "/favicon.png",
   "navigation": [
     {
+      "group": "Home",
+      "pages": [
+        "home"
+      ]
+    },
+    {
       "group": "Overview",
       "pages": [
         "aurus/home"
