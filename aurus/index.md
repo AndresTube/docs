@@ -1,0 +1,44 @@
+---
+title: Aurus
+description: A packet-based 3D menu system for Paper servers (1.20.1+)
+---
+
+# Aurus
+
+A packet-based 3D menu system for Paper servers (1.20.1+).
+
+## Pages
+
+- [Getting Started](/aurus/getting-started)
+- [Menu Configuration](/aurus/menu-configuration)
+- [Component Types](/aurus/component-types)
+- [Actions](/aurus/actions)
+- [Animations](/aurus/animations)
+- [Placeholders](/aurus/placeholders)
+- [Commands & Permissions](/aurus/commands)
+
+## Quick example
+
+```yaml
+my_menu:
+  distance: 2.5
+  update-in-ticks: 20
+  components:
+    title:
+      type: TEXT
+      text: "<gold>Hello, <aqua>%player_name%!"
+      x: 0.0
+      y: 2.0
+      size: 2.0
+      background: false
+    close_btn:
+      type: BUTTON
+      text: "<red>[ Close ]"
+      x: 0.0
+      y: -1.5
+      size: 1.2
+      actions:
+        - "[close]"
+```
+
+Open it with: `/au open my_menu`
