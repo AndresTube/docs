@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  base: '/docs/',
   title: 'Aurus',
   description: 'A packet-based 3D menu system for Paper servers (1.20.1+)',
 
