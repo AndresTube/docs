@@ -10,30 +10,8 @@
     {
       "group": "Overview",
       "pages": [
-        "introduction",
-        "aurus/home",
-        "aurus/getting-started"
-      ]
-    },
-    {
-      "group": "Configuration",
-      "pages": [
-        "aurus/menu-configuration",
-        "aurus/component-types",
-        "aurus/actions",
-        "aurus/animations",
-        "aurus/placeholders"
-      ]
-    },
-    {
-      "group": "Reference",
-      "pages": [
-        "aurus/commands"
+        "introduction"
       ]
     }
-  ],
-  "footerSocials": {
-    "discord": "https://discord.com/invite/w7ef4DCqvK",
-    "github": "https://github.com/AndresTube/aurus"
-  }
+  ]
 }
