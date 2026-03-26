@@ -28,6 +28,7 @@ export default defineConfig({
         text: 'Configuration',
         items: [
           { text: 'Menu Configuration', link: '/aurus/menu-configuration' },
+          { text: 'Areas', link: '/aurus/areas' },
           { text: 'Component Types', link: '/aurus/component-types' },
           { text: 'Actions', link: '/aurus/actions' },
           { text: 'Animations', link: '/aurus/animations' },
@@ -38,6 +39,18 @@ export default defineConfig({
         text: 'Reference',
         items: [
           { text: 'Commands & Permissions', link: '/aurus/commands' }
+        ]
+      },
+      {
+        text: 'API',
+        items: [
+          { text: 'Overview', link: '/aurus/api/' },
+          { text: 'Getting Started', link: '/aurus/api/getting-started' },
+          { text: 'Creating Menus', link: '/aurus/api/creating-menus' },
+          { text: 'Managing Menus', link: '/aurus/api/managing-menus' },
+          { text: 'Areas', link: '/aurus/api/areas' },
+          { text: 'Components', link: '/aurus/api/components' },
+          { text: 'Events', link: '/aurus/api/events' }
         ]
       }
     ],

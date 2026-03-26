@@ -1,6 +1,6 @@
 ---
 title: Menu Configuration
-description: Root keys, component keys, and coordinate system
+description: Root keys, areas, component keys, and coordinate system
 ---
 
 # Menu Configuration
@@ -12,7 +12,6 @@ Each `.yml` file inside `plugins/Aurus/menus/` can hold one or more menus.
 ```yaml
 my_menu:
   distance: 2.5
-  update-in-ticks: 20
   update-placeholders: true
   location: "world,100,64,200,0,0"
   on-open:
@@ -20,26 +19,45 @@ my_menu:
     - "[message] <green>Welcome!"
   on-close:
     - "[message] <red>Goodbye!"
-  components:
+  areas:
     ...
 ```
 
 | Key | Type | Default | Description |
 |---|---|---|---|
 | `distance` | double | `2.5` | Distance from the player's eyes to the menu plane |
-| `update-in-ticks` | int | `20` | Ticks between placeholder text refreshes |
 | `update-placeholders` | boolean | `true` | Whether placeholder text should refresh |
 | `location` | string | none | Teleports the player to a fixed location |
 | `on-open` | string list | `[]` | Actions to run when the menu opens |
 | `on-close` | string list | `[]` | Actions to run when the menu closes |
+
+## Areas
+
+Components are organized into **areas**. Each area is a bounded container with its own settings. See [Areas](/aurus/areas) for full documentation.
+
+```yaml
+my_menu:
+  areas:
+    main:
+      type: STATIC
+      x: 0
+      y: 0
+      size-x: 6.0
+      size-y: 4.0
+      update-ticks: 20
+      components:
+        my_button:
+          type: BUTTON
+          ...
+```
 
 ## Component keys
 
 | Key | Type | Default | Description |
 |---|---|---|---|
 | `type` | string | `BUTTON` | Component type |
-| `x` | double | `0.0` | Horizontal offset |
-| `y` | double | `0.0` | Vertical offset |
+| `x` | double | `0.0` | Horizontal offset (relative to area) |
+| `y` | double | `0.0` | Vertical offset (relative to area) |
 | `z` | double | `1.0` | Depth offset |
 | `size` | double | `1.0` | Scale multiplier |
 | `hitbox.width` | double | auto | Custom hitbox width |

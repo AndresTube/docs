@@ -5,19 +5,22 @@ description: All available component types
 
 # Component Types
 
+Components live inside [areas](/aurus/areas). Their `x` and `y` positions are relative to the area they belong to.
+
 ## TEXT
 
 A non-interactive text label.
 
 ```yaml
-my_text:
-  type: TEXT
-  text: "<gray>Server version: <white>1.21.4"
-  background: false
-  shadow: false
-  x: 0.0
-  y: 1.5
-  size: 1.2
+components:
+  my_text:
+    type: TEXT
+    text: "<gray>Server version: <white>1.21.4"
+    background: false
+    shadow: false
+    x: 0.0
+    y: 1.5
+    size: 1.2
 ```
 
 ## BUTTON
@@ -25,16 +28,17 @@ my_text:
 A clickable text label. Fires `actions` when clicked.
 
 ```yaml
-my_button:
-  type: BUTTON
-  text: "<green>[ Play ]"
-  x: 0.0
-  y: 0.0
-  size: 1.5
-  sound: "ui.button.click"
-  actions:
-    - "[close]"
-    - "[player] spawn"
+components:
+  my_button:
+    type: BUTTON
+    text: "<green>[ Play ]"
+    x: 0.0
+    y: 0.0
+    size: 1.5
+    sound: "ui.button.click"
+    actions:
+      - "[close]"
+      - "[player] spawn"
 ```
 
 ### Hover
@@ -43,37 +47,39 @@ BUTTON and INPUT components can define a `hover` section that swaps the componen
 
 ::: details Text-to-text hover
 ```yaml
-play_button:
-  type: BUTTON
-  text: "<gray>[ Play ]"
-  x: 0.0
-  y: 0.0
-  size: 1.5
-  actions:
-    - "[close]"
-    - "[player] spawn"
-  hover:
+components:
+  play_button:
     type: BUTTON
-    text: "<green><bold>[ Play ]"
+    text: "<gray>[ Play ]"
+    x: 0.0
+    y: 0.0
     size: 1.5
-    background: false
+    actions:
+      - "[close]"
+      - "[player] spawn"
+    hover:
+      type: BUTTON
+      text: "<green><bold>[ Play ]"
+      size: 1.5
+      background: false
 ```
 :::
 
 ::: details Text-to-item hover
 ```yaml
-sword_button:
-  type: BUTTON
-  text: "<white>Sword"
-  x: 0.0
-  y: -1.0
-  size: 1.2
-  actions:
-    - "[console] give %player% diamond_sword"
-  hover:
-    type: ITEM
-    material: DIAMOND_SWORD
+components:
+  sword_button:
+    type: BUTTON
+    text: "<white>Sword"
+    x: 0.0
+    y: -1.0
     size: 1.2
+    actions:
+      - "[console] give %player% diamond_sword"
+    hover:
+      type: ITEM
+      material: DIAMOND_SWORD
+      size: 1.2
 ```
 :::
 
@@ -82,17 +88,18 @@ sword_button:
 Opens a chat input box when clicked. Stores the player's response in a named variable.
 
 ```yaml
-name_input:
-  type: INPUT
-  text: "<yellow>Click to set name"
-  variable_name: player_custom_name
-  fallback-message: "<gray>Write in the chat or type <red>cancel"
-  sound: "ui.button.click"
-  x: 0.0
-  y: 0.0
-  size: 1.2
-  actions:
-    - "[message] <green>Name saved!"
+components:
+  name_input:
+    type: INPUT
+    text: "<yellow>Click to set name"
+    variable_name: player_custom_name
+    fallback-message: "<gray>Write in the chat or type <red>cancel"
+    sound: "ui.button.click"
+    x: 0.0
+    y: 0.0
+    size: 1.2
+    actions:
+      - "[message] <green>Name saved!"
 ```
 
 - `fallback-message` is optional. Supports MiniMessage formatting.
@@ -104,13 +111,14 @@ name_input:
 Displays a Minecraft item.
 
 ```yaml
-my_item:
-  type: ITEM
-  material: DIAMOND_SWORD
-  model-id: 1
-  x: 1.5
-  y: 0.0
-  size: 1.0
+components:
+  my_item:
+    type: ITEM
+    material: DIAMOND_SWORD
+    model-id: 1
+    x: 1.5
+    y: 0.0
+    size: 1.0
 ```
 
 ## BLOCK
@@ -118,12 +126,13 @@ my_item:
 Displays a Minecraft block.
 
 ```yaml
-my_block:
-  type: BLOCK
-  material: GRASS_BLOCK
-  x: -1.5
-  y: 0.0
-  size: 0.8
+components:
+  my_block:
+    type: BLOCK
+    material: GRASS_BLOCK
+    x: -1.5
+    y: 0.0
+    size: 0.8
 ```
 
 ## ENTITY
@@ -131,15 +140,16 @@ my_block:
 Displays a fake entity, only visible to the menu viewer.
 
 ```yaml
-my_entity:
-  type: ENTITY
-  entity: ZOMBIE
-  x: 1.0
-  y: -0.5
-  rotation:
-    x: 30
-    x-head: -45
-    y-head: 10
+components:
+  my_entity:
+    type: ENTITY
+    entity: ZOMBIE
+    x: 1.0
+    y: -0.5
+    rotation:
+      x: 30
+      x-head: -45
+      y-head: 10
 ```
 
 ## PLAYER
@@ -147,24 +157,25 @@ my_entity:
 Displays a fake player NPC with a skin fetched from Mojang.
 
 ```yaml
-my_npc:
-  type: PLAYER
-  skin: "Notch"
-  nametag: "<gold>Notch"
-  x: -1.0
-  y: -0.5
-  rotation:
-    x: 30
-    x-head: -45
-    y-head: 10
+components:
+  my_npc:
+    type: PLAYER
+    skin: "Notch"
+    nametag: "<gold>Notch"
+    x: -1.0
+    y: -0.5
+    rotation:
+      x: 30
+      x-head: -45
+      y-head: 10
 ```
 
 ## Shared properties
 
 | Property | Type | Default | Description |
 |---|---|---|---|
-| `x` | double | `0.0` | Horizontal offset |
-| `y` | double | `0.0` | Vertical offset |
+| `x` | double | `0.0` | Horizontal offset (relative to area) |
+| `y` | double | `0.0` | Vertical offset (relative to area) |
 | `z` | double | `1.0` | Depth offset |
 | `size` | double | `1.0` | Scale multiplier |
 | `hover` | section | none | Hover appearance (BUTTON, INPUT only) |
