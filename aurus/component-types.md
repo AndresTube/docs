@@ -93,6 +93,10 @@ components:
     type: INPUT
     text: "<yellow>Click to set name"
     variable_name: player_custom_name
+    regex: "^[a-zA-Z0-9_]+$"
+    min-length: 3
+    max-length: 16
+    error-message: "<red>Invalid name."
     fallback-message: "<gray>Write in the chat or type <red>cancel"
     sound: "ui.button.click"
     x: 0.0
@@ -103,12 +107,13 @@ components:
 ```
 
 - `fallback-message` is optional. Supports MiniMessage formatting.
+- `regex`, `min-length`, `max-length`, and `error-message` are optional validation constraints.
 - `sound` is optional. Custom click sound, same as BUTTON.
 - Access the variable in PAPI: `%aurus_variable_player_custom_name%`
 
 ## ITEM
 
-Displays a Minecraft item.
+Displays a Minecraft item. Also supports Base64 skull textures.
 
 ```yaml
 components:
@@ -119,6 +124,11 @@ components:
     x: 1.5
     y: 0.0
     size: 1.0
+  my_head:
+    type: ITEM
+    base64: "eyJ0ZXh0dXJlcyI..."
+    x: 0.0
+    y: 0.0
 ```
 
 ## BLOCK
@@ -181,6 +191,9 @@ components:
 | `hover` | section | none | Hover appearance (BUTTON, INPUT only) |
 | `background` | boolean | `true` | Dark background behind text |
 | `shadow` | boolean | `false` | Text shadow rendering |
+| `view-requirements` | list | none | List of math/permission condition strings |
+| `requirements` | list | none | Conditions checked before triggering actions |
+| `deny-actions` | list | none | Actions fired if requirements fail click |
 
 ::: info
 All text fields support MiniMessage tags and PlaceholderAPI placeholders.

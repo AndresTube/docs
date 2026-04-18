@@ -13,6 +13,7 @@ Areas are containers that group components together. Every menu must define at l
 |------|-------------|
 | `STATIC` | Fixed area. Components stay in place. |
 | `SCROLL` | Scrollable area. The player can scroll vertically using the mouse wheel. Components outside the area bounds are hidden. |
+| `SCROLL_HORIZONTAL` | Scrollable area. The player can scroll horizontally using the mouse wheel. Components outside the area bounds are hidden. |
 
 ## Area keys
 
@@ -36,7 +37,7 @@ my_menu:
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| `type` | string | `STATIC` | Area type: `STATIC` or `SCROLL` |
+| `type` | string | `STATIC` | Area type: `STATIC`, `SCROLL`, or `SCROLL_HORIZONTAL` |
 | `x` | double | `0.0` | Horizontal position of the area center |
 | `y` | double | `0.0` | Vertical position of the area center |
 | `size-x` | double | `6.0` | Width of the area bounds |
@@ -52,10 +53,10 @@ Component `x` and `y` values inside an area are **relative to the area's positio
 
 ## Scroll areas
 
-When an area has `type: SCROLL`, the player can scroll its contents vertically using the mouse wheel. Components that move outside the area bounds are automatically hidden.
+When an area has `type: SCROLL` or `type: SCROLL_HORIZONTAL`, the player can scroll its contents vertically or horizontally using the mouse wheel. Components that move outside the area bounds are automatically hidden.
 
 ::: warning
-When a SCROLL area is present, the player's hotbar items are temporarily saved and cleared to allow mouse wheel detection. Items are restored when the menu closes.
+When a SCROLL or SCROLL_HORIZONTAL area is present, the player's hotbar items are temporarily saved and cleared to allow mouse wheel detection. Items are restored when the menu closes.
 :::
 
 ## Open/close animations

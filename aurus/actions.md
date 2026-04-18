@@ -17,6 +17,7 @@ Actions are strings that run top-to-bottom. They can be used inside a button's `
 | `[message] <text>` | `[message] <green>Hello!` | Sends a message to the player |
 | `[broadcast] <text>` | `[broadcast] <gold>%player% joined!` | Broadcasts to all players |
 | `[openmenu] <id>` | `[openmenu] user_profile` | Closes current menu and opens another |
+| `[back]` | `[back]` | Closes current menu and opens previous menu in history |
 | `[sound] <key>, <vol>, <pitch>` | `[sound] entity.player.levelup, 1.0, 1.2` | Plays a sound to the player |
 
 ## Example
